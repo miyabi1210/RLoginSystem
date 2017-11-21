@@ -1,0 +1,8 @@
+name: RLoginSystem
+main: kazuki.rlogin.RLoginSystem
+version: 1.0.0
+api: [1.0.0]
+author: kazuki102812
+commands:
+ home:
+  description: "homeにtp"
