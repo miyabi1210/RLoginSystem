@@ -33,9 +33,9 @@ public class RLoginSystem extends PluginBase implements Listener {
 		String name = player.getName();
 		String ip = player.getAddress();
 		String cid = String.valueOf(player.getClientId());
-		if(this.player.exists(name)) {
+		if(this.playerdata.containsKey(name)) {
             HashMap data = this.playerdata.get(name);
-            HashMap pdata = (HashMap) data.get("data");
+            HashMap pdata = (HashMap) data.get("main");
             String pip = (String) pdata.get("ip");
             String pcid = (String) pdata.get("cid");
             if(ip.equals(pip) && cid.equals(pcid)) {
@@ -49,7 +49,7 @@ public class RLoginSystem extends PluginBase implements Listener {
 			HashMap<String, String> datas = new HashMap<String, String>();
 			datas.put("ip", ip);
 			datas.put("cid", cid);
-			data.put("data", datas);
+			data.put("main", datas);
 			this.playerdata.put(name, data);
 			player.sendMessage("§f>>>§a[RL]§fアカウント登録が完了しました");
 		}
